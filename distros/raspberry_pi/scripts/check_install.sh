@@ -1,4 +1,5 @@
 #!/bin/bash
+# Description: Checks the installation and configuration of Web3 Pi image
 #
 # Web3 Pi - Comprehensive Check Script
 #
@@ -207,10 +208,10 @@ check_swap_space() {
 # Function to check kernel parameters
 check_sysctl_settings() {
     local swappiness=$(sysctl vm.swappiness | awk '{print $3}')
-    if [ "$swappiness" -eq 100 ]; then
+    if [ "$swappiness" -eq 80 ]; then
         echolog "OK" "Sysctl Setting" "vm.swappiness is set to $swappiness."
     else
-        echolog "WARN" "Sysctl Setting" "vm.swappiness is $swappiness (recommended: 100)."
+        echolog "WARN" "Sysctl Setting" "vm.swappiness is $swappiness (recommended: 80)."
     fi
 }
 

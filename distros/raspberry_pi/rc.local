@@ -3,7 +3,7 @@
 # Web3 Pi - rc.local
 #
 
-BRANCH="v0.7.4"
+BRANCH="r0.7.5"
 
 # Function: echolog
 # Description: Logs messages with a timestamp prefix. If no arguments are provided,
@@ -123,7 +123,7 @@ if [ "$(get_install_stage)" -eq 0 ]; then
   apt-get update
   
   set_status "[rc.local] - Install essential dependencies"
-  apt-get -y install chrony avahi-daemon git-extras python3-pip python3-netifaces
+  apt-get -y install chrony avahi-daemon git-extras python3-pip python3-netifaces flashrom
 
   set_status "[rc.local] - Sync time with NTP server (chronyd -q)"
   chronyd -q
